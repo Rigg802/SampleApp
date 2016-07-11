@@ -4,5 +4,5 @@ const monitors_1 = require('../reducers/monitors');
 const reducers = {
     monitors: monitors_1.default
 };
-const roo = redux_1.combineReducers(reducers);
+exports.rootReducer = redux_1.combineReducers(reducers);
 //# sourceMappingURL=index.js.map

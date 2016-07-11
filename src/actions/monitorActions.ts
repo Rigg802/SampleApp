@@ -1,14 +1,18 @@
 import { ActionCreatorsMapObject } from 'redux';
 
-export const ADD_MONITOR = 'ADD_MONITOR';
+export const FETCH_DATA = 'FETCH_DATA';
+export const REMOVE_MONITOR = 'REMOVE_MONITOR';
 
-const addMonitor = function(parameter:any) {
-  return { type: ADD_MONITOR, parameter };
+const fetch = function(parameter:any) {
+  return { type: FETCH_DATA, parameter };
 };
 
+const closeMonitor = function(id: number) {
+  return { type: REMOVE_MONITOR, id };
+};
 
 const actions:ActionCreatorsMapObject = { 
-  addMonitor: addMonitor 
+  fetch: fetch 
 };
 
 export default actions;

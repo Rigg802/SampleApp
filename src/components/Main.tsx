@@ -1,9 +1,8 @@
 import 'normalize.css/normalize.css!';
 import 'styles/App.css!';
 import * as React from 'react';
-import { AppComponentProps } from '../models/AppComponentModels';
 
-class AppComponent extends React.Component<AppComponentProps,void> {
+class AppComponent extends React.Component<void,void> {
   render() {
     return (
       <div className="index">
