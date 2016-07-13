@@ -14,12 +14,6 @@ class monitorContainer extends react_1.Component {
         return (React.createElement("div", null, React.createElement("h1", null, "Monitor #", monitor.id), monitor.name));
     }
 }
-function mapStateToProps(state, ownProps) {
-    const props = {
-        monitor: state.monitors[ownProps.monitor.id]
-    };
-    return props;
-}
 function mapDispatchToProps(dispatch) {
     const actionMap = {
         actions: redux_1.bindActionCreators(monitorActions_1.default, dispatch)
@@ -27,5 +21,5 @@ function mapDispatchToProps(dispatch) {
     return actionMap;
 }
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = react_redux_1.connect(mapStateToProps, mapDispatchToProps)(monitorContainer);
+exports.default = react_redux_1.connect(null, mapDispatchToProps)(monitorContainer);
 //# sourceMappingURL=Monitor.js.map

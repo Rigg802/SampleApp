@@ -2,8 +2,8 @@ import * as monitorActions from '../actions/monitorActions';
 
 const initialState = {};
 
-const reducers = function(state = initialState, action:any) {
- 
+const reducers = function(state = initialState, action: any) {
+
   let nextState = Object.assign({}, state);
   switch(action.type) {
     // Modify next state depending on the action and return it
@@ -16,6 +16,6 @@ const reducers = function(state = initialState, action:any) {
       return state;
     }
   }
-}
+} 
 
 export default reducers;

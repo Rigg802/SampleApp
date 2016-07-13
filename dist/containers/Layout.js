@@ -7,6 +7,7 @@ const monitorActions_1 = require('../actions/monitorActions');
 class layoutContainer extends react_1.Component {
     constructor(props) {
         super(props);
+        console.log("in layout container");
     }
     render() {
         const { actions } = this.props;
@@ -15,7 +16,7 @@ class layoutContainer extends react_1.Component {
 }
 function mapStateToProps(state) {
     const props = {
-        monitors: monitors = state.monitors
+        monitors: state.monitors
     };
     return props;
 }
