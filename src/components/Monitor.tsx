@@ -19,3 +19,5 @@ class Monitor extends Component<MonitorProps, MonitorState> {
     );
   }
 }
+
+export default Monitor;

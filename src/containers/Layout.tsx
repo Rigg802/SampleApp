@@ -3,25 +3,28 @@ import { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { LayoutProps, LayoutState } from '../models/layoutModel';
+import { default as layoutActions } from '../actions/layoutActions';
 import { default as monitorActions } from '../actions/monitorActions';
+import { default as Layout } from '../components/Layout';
 
 class LayoutContainer extends Component<LayoutProps, LayoutState> {
   constructor(props:LayoutProps){
     super(props);
-    console.log("in layout container");
   }
   render() {
-    const {actions} = this.props;
+    const { monActions, monitors, actions } = this.props;
+    console.log("Render");
+    console.log(this.props);
+    console.log(monitors);
     return (
-      <div>
-        <p>hello</p>
-        <button onClick="{actions.addMonitor}">Add Monitor</button>
-      </div>
+      <Layout actions={actions} monitors={monitors} monActions={monitorActions}/>
     );
   }
 }
 
 function mapStateToProps(state:LayoutState): LayoutProps {
+  console.log("StateToProps");
+  console.log(state);
   const props = {
       monitors : state.monitors
   };
@@ -30,7 +33,8 @@ function mapStateToProps(state:LayoutState): LayoutProps {
 
 function mapDispatchToProps(dispatch:any) {
   const actionMap:Object = {
-    actions: bindActionCreators(monitorActions, dispatch)
+    actions: bindActionCreators(layoutActions, dispatch),
+    monActions: bindActionCreators(monitorActions, dispatch)
   };
   return actionMap;
 }

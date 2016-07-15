@@ -11,4 +11,6 @@ class Monitor extends react_1.Component {
         return (React.createElement("div", null, React.createElement("h1", null, "Monitor #", monitor.id), monitor.name));
     }
 }
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = Monitor;
 //# sourceMappingURL=Monitor.js.map

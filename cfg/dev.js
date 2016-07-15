@@ -19,9 +19,9 @@ let config = Object.assign({}, baseConfig, {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
-    new BowerWebpackPlugin({
-      searchResolveModulesDirectories: false
-    })
+    // new BowerWebpackPlugin({
+    //   searchResolveModulesDirectories: true
+    // })
   ],
   module: defaultSettings.getDefaultModules()
 });

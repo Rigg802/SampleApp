@@ -1,9 +1,8 @@
 "use strict";
 const redux_1 = require('redux');
-const monitorReducer_1 = require('../reducers/monitorReducer');
+const layoutReducer_1 = require('../reducers/layoutReducer');
 const reducers = {
-    monitors: monitorReducer_1.default
+    layouts: layoutReducer_1.default
 };
-console.log("reducers exported");
 exports.rootReducer = redux_1.combineReducers(reducers);
 //# sourceMappingURL=index.js.map
