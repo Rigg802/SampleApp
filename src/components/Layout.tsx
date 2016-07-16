@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Component } from 'react';
-import { LayoutProps, LayoutState } from '../models/layoutModel';
+import { LayoutProps, LayoutState } from '../models';
 import { default as Monitor } from './Monitor';
 
 class Layout extends Component<LayoutProps, LayoutState> {

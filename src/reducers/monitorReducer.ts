@@ -1,6 +1,7 @@
 import * as monitorActions from '../actions/monitorActions';
+import { MonitorState } from '../models';
 
-const initialState = {};
+const initialState: MonitorState = {};
 
 const reducers = function(state = initialState, action: any) {
 
@@ -19,3 +20,5 @@ const reducers = function(state = initialState, action: any) {
 } 
 
 export default reducers;
+
+export const getMonitor = (state: MonitorState, id: number) => ( state.byId[id] );

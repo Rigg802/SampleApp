@@ -1,10 +1,8 @@
-import { ADD_MONITOR } from '../actions/layoutActions';
-import { CLOSE_MONITOR } from '../actions/monitorActions';
-import { LayoutState } from '../models/layoutModel';
-import { Monitor, MonitorAction } from '../models/monitorModel';
+import { ADD_MONITOR, REMOVE_MONITOR } from '../actions';
+import { LayoutState, MonitorState, MonitorAction } from '../models';
 
 const initialState: LayoutState = {
-  monitors:new Array()
+  monitors: []
 };
 
 const reducers = (state=initialState, action: MonitorAction) => {
@@ -13,7 +11,7 @@ const reducers = (state=initialState, action: MonitorAction) => {
       return addAction(Object.assign({}, state), action.payload);
     }
     
-    case CLOSE_MONITOR: {
+    case REMOVE_MONITOR: {
       return Object.assign({}, state, { monitors: state.monitors.splice(action.payload.id,1) });
     }
 
@@ -25,13 +23,15 @@ const reducers = (state=initialState, action: MonitorAction) => {
   }
 }
 
+export const getMonitorIds = (state: LayoutState):Array<number> => (state.monitors);
+
 function addAction(state: LayoutState, payload: any){
-  let newMonitor: Monitor = {
+  let newMonitor: MonitorState = {
     id: payload.id,
     name: payload.name
   }
   // let monitors = Object.assign(state, state.monitors, )
-  state.monitors.push(newMonitor);
+  // state.monitors.push(newMonitor);
   return state;
 }
 

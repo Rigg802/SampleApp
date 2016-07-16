@@ -1,12 +1,11 @@
-import { Monitor } from './monitorModel';
+import { MonitorState } from './';
 
 export interface LayoutProps {
     actions?:any
-    monitors:Array<Monitor>
+    monitors:Array<MonitorState>
     monActions?:any
 }
 
 export interface LayoutState {
-    actions?:any
     monitors:Array<number>
 }

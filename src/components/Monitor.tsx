@@ -1,8 +1,6 @@
 import * as React from 'react';
 import { Component } from 'react';
-import { MonitorState, MonitorProps } from '../models/monitorModel';
-import { LayoutState } from '../models/layoutModel';
-import { default as monitorActions } from '../actions/monitorActions';
+import { MonitorState, MonitorProps } from '../models';
 
 class Monitor extends Component<MonitorProps, MonitorState> {
   constructor(props:MonitorProps){

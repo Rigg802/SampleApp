@@ -1,4 +1,4 @@
-import Layout from './containers/Layout';
+import { LayoutContainer } from './containers';
 import * as React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
@@ -8,7 +8,7 @@ const store = configureStore();
 
 render(
   <Provider store={store}>
-    <Layout />
+    <LayoutContainer />
   </Provider>,
   document.getElementById('app')
 );

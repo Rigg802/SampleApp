@@ -1,15 +1,11 @@
 export interface MonitorProps {
     actions?:any
-    monitor:Monitor
+    monitor:MonitorState
 }
 
 export interface MonitorState {
-    actions?:any
-}
-
-export interface Monitor {
-    id:number,
-    name:string
+    id?:number,
+    name?:string
 }
 
 export interface MonitorAction {

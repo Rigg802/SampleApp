@@ -1,14 +1,21 @@
 "use strict";
 exports.FETCH_DATA = 'FETCH_DATA';
 exports.REMOVE_MONITOR = 'REMOVE_MONITOR';
-const fetch = function (parameter) {
-    return { type: exports.FETCH_DATA, parameter: parameter };
-};
-const closeMonitor = function (id) {
-    return { type: exports.REMOVE_MONITOR, id: id };
-};
+exports.ADD_MONITOR = 'ADD_MONITOR';
+const fetch = (parameter) => ({ type: exports.FETCH_DATA, parameter: parameter });
+const closeMonitor = (id) => ({ type: exports.REMOVE_MONITOR, id: id });
+let monitorID = 0;
+exports.addMonitor = (name) => ({
+    type: exports.ADD_MONITOR,
+    payload: {
+        name: name,
+        id: monitorID++
+    }
+});
 const actions = {
-    fetch: fetch
+    fetch: fetch,
+    closeMonitor: closeMonitor,
+    addMonitor: exports.addMonitor
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = actions;
