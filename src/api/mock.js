@@ -1,7 +1,7 @@
 /**
  * Mocking client-server processing
  */
-import _monitors from './monitors.json'
+var _monitors = require('!json./monitors.json');
 
 const TIMEOUT = 100
 

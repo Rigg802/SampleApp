@@ -4,9 +4,12 @@ function __export(m) {
 }
 __export(require('./layoutActions'));
 var monitorActions_1 = require('./monitorActions');
-exports.ADD_MONITOR = monitorActions_1.ADD_MONITOR;
 exports.REMOVE_MONITOR = monitorActions_1.REMOVE_MONITOR;
 exports.FETCH_MONITOR_DATA = monitorActions_1.FETCH_DATA;
-var monitorActions_2 = require('../actions/monitorActions');
+var layoutActions_2 = require('./layoutActions');
+exports.ADD_MONITOR = layoutActions_2.ADD_MONITOR;
+var monitorActions_2 = require('./monitorActions');
 exports.MonitorActions = monitorActions_2.default;
+var layoutActions_3 = require('./layoutActions');
+exports.LayoutActions = layoutActions_3.default;
 //# sourceMappingURL=index.js.map

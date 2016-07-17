@@ -6,9 +6,8 @@ const configureStore = function (initialState = {}) {
     if (module.hot) {
         // Enable Webpack hot module replacement for reducers
         module.hot.accept('../reducers', () => {
-            // Todo polyfill-reload
-            // const nextReducer = import '../reducers!';
-            store.replaceReducer(reducers_1.rootReducer);
+            const nextReducer = require('../reducers');
+            store.replaceReducer(nextReducer);
         });
     }
     return store;

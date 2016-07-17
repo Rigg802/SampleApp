@@ -10,7 +10,7 @@ const reducers = (state=initialState, action: MonitorAction) => {
     case ADD_MONITOR: {
       let nextState= Object.assign({}, state);
       nextState.monitors.push(action.payload.id);
-      return ( Object.assign({}, state, nextState ));
+      return ( Object.assign({}, state, nextState) );
     }
     
     case REMOVE_MONITOR: {

@@ -1,1 +1,1 @@
-{"version":3,"file":"layoutActions.js","sourceRoot":"","sources":["../../src/actions/layoutActions.ts"],"names":[],"mappings":";AAEA,MAAM,OAAO,GAA2B,EAEvC,CAAC;AAEF;kBAAe,OAAO,CAAC"}
+{"version":3,"file":"layoutActions.js","sourceRoot":"","sources":["../../src/actions/layoutActions.ts"],"names":[],"mappings":";AACa,mBAAW,GAAG,aAAa,CAAC;AAEzC,IAAI,SAAS,GAAG,CAAC,CAAC;AACL,kBAAU,GAAG,CAAC,IAAW,KAAK,CACzC;IACE,IAAI,EAAE,mBAAW;IACjB,OAAO,EAAE;QACP,MAAA,IAAI;QACJ,EAAE,EAAG,SAAS,EAAE;KACjB;CACF,CACF,CAAC;AAEF,MAAM,OAAO,GAA2B;IACtC,UAAU,EAAC,kBAAU;CACtB,CAAC;AAEF;kBAAe,OAAO,CAAC"}

@@ -1,6 +1,7 @@
 export interface MonitorProps {
     actions?:any
     monitor:MonitorState
+    monitorData:any
 }
 
 export interface MonitorState {

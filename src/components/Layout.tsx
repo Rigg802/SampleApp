@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Component } from 'react';
 import { LayoutProps, LayoutState } from '../models';
 import { default as Monitor } from './Monitor';
+import { FakeObjectDataListStore } from '../api/faker';
 
 class Layout extends Component<LayoutProps, LayoutState> {
   constructor(props:LayoutProps){
@@ -17,13 +18,14 @@ class Layout extends Component<LayoutProps, LayoutState> {
     if(monitors === undefined){
       monitors = new Array();
     }
+    let monitorData = new FakeObjectDataListStore(30);
     return (
       <div>
         <p>hello</p>
         <button onClick={this.onClick.bind(this)}>Add Monitor</button>
         <ul className="monitor-list">
           {monitors.map(monitor =>
-            <Monitor key={monitor.id} monitor={monitor} actions={monActions} />
+            <Monitor key={monitor.id} monitor={monitor} actions={monActions} monitorData={monitorData}/>
           )}
         </ul>
       </div>

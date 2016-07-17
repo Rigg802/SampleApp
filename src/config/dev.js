@@ -1,5 +1,5 @@
 'use strict';
-
+/// <reference path="../typings/dev.d.ts" />
 import baseConfig from './base';
 
 let config = {
