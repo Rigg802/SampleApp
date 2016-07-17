@@ -1,8 +1,8 @@
 import { combineReducers, ReducersMapObject, Reducer } from 'redux';
-import layout from '../reducers/layoutReducer';
-import monitors from '../reducers/monitorReducer';
-import * as fromLayout from '../reducers/layoutReducer';
-import * as fromMonitors from '../reducers/monitorReducer';
+import layout from './layoutReducer';
+import monitors from './monitorReducer';
+import * as fromLayout from './layoutReducer';
+import * as fromMonitors from './monitorReducer';
 import { RootReducer, LayoutState as Layout } from '../models';
 
 const reducers: ReducersMapObject = { 

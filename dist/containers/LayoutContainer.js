@@ -6,13 +6,11 @@ const react_redux_1 = require('react-redux');
 const layoutActions_1 = require('../actions/layoutActions');
 const monitorActions_1 = require('../actions/monitorActions');
 const Layout_1 = require('../components/Layout');
-const index_1 = require('../reducers/index');
+const reducers_1 = require('../reducers');
 //It's actually the root reducer state
 function mapStateToProps(rootState) {
-    console.log("StateToProps");
-    console.log(rootState);
     const props = {
-        monitors: index_1.getMonitors(rootState)
+        monitors: reducers_1.getMonitorsForLayout(rootState)
     };
     return props;
 }
@@ -29,9 +27,6 @@ class LayoutContainer extends react_1.Component {
     }
     render() {
         const { monActions, monitors, actions } = this.props;
-        console.log("Render");
-        console.log(this.props);
-        console.log(monitors);
         return (React.createElement(Layout_1.default, {actions: actions, monitors: monitors, monActions: monitorActions_1.default}));
     }
 }

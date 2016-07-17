@@ -1,7 +1,7 @@
 import { LayoutState as Layout } from './layoutModel';
-import { MonitorState as Monitor } from './monitorModel';
+import { MonitorsState as Monitors } from './monitorModel';
 
 export interface RootReducer {
     layout: Layout
-    monitors: Array<Monitor>
+    monitors: Monitors
 }

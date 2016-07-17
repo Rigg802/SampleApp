@@ -1,6 +1,8 @@
 "use strict";
 const monitorActions = require('../actions/monitorActions');
-const initialState = {};
+const initialState = {
+    monitors: new Array()
+};
 const reducers = function (state = initialState, action) {
     let nextState = Object.assign({}, state);
     switch (action.type) {
@@ -16,4 +18,5 @@ const reducers = function (state = initialState, action) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = reducers;
+exports.getMonitor = (state, id) => (state.monitors[id]);
 //# sourceMappingURL=monitorReducer.js.map

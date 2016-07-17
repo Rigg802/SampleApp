@@ -3,23 +3,23 @@ import { Component } from 'react';
 import { bindActionCreators, Reducer } from 'redux';
 import { connect } from 'react-redux';
 import { LayoutProps, LayoutState, RootReducer } from '../models';
-import { default as layoutActions } from '../actions/layoutActions';
-import { default as monitorActions } from '../actions/monitorActions';
+import { LayoutActions } from '../actions';
+import { MonitorActions } from '../actions';
 import { default as Layout } from '../components/Layout';
 import { getMonitorsForLayout } from '../reducers';
 
 //It's actually the root reducer state
 function mapStateToProps(rootState: RootReducer): any {
   const props = {
-      monitors : getMonitorsForLayout(rootState.layout)
+      monitors : getMonitorsForLayout(rootState)
   };
   return props;
 }
 
 function mapDispatchToProps(dispatch:any) {
   const actionMap:Object = {
-    actions: bindActionCreators(layoutActions, dispatch),
-    monActions: bindActionCreators(monitorActions, dispatch)
+    actions: bindActionCreators(LayoutActions, dispatch),
+    monActions: bindActionCreators(MonitorActions, dispatch)
   };
   return actionMap;
 }
@@ -30,11 +30,8 @@ class LayoutContainer extends Component<LayoutProps, LayoutState> {
   }
   render() {
     const { monActions, monitors, actions } = this.props;
-    console.log("Render");
-    console.log(this.props);
-    console.log(monitors);
     return (
-      <Layout actions={actions} monitors={monitors} monActions={monitorActions}/>
+      <Layout actions={actions} monitors={monitors} monActions={MonitorActions}/>
     );
   }
 }

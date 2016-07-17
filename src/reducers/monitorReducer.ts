@@ -1,15 +1,19 @@
-import * as monitorActions from '../actions/monitorActions';
-import { MonitorState } from '../models';
+import { ADD_MONITOR, REMOVE_MONITOR } from '../actions';
+import { MonitorState, MonitorsState } from '../models';
 
-const initialState: MonitorState = {};
+const initialState: MonitorsState = {
+  monitors:new Array<MonitorState>()
+}
 
 const reducers = function(state = initialState, action: any) {
-
-  let nextState = Object.assign({}, state);
   switch(action.type) {
     // Modify next state depending on the action and return it
-    case monitorActions.REMOVE_MONITOR: {
-      return nextState;
+    case ADD_MONITOR: {
+      return addAction(Object.assign({}, state), action.payload);
+    }
+    
+    case REMOVE_MONITOR: {
+       return Object.assign({}, state, { monitors: state.monitors.splice(action.payload.id,1) });
     }
 
     default: {
@@ -19,6 +23,14 @@ const reducers = function(state = initialState, action: any) {
   }
 } 
 
+function addAction(state: MonitorsState, payload: any){
+  let newMonitor: MonitorState = {
+    id: payload.id,
+    name: payload.name
+  }
+  state.monitors.push(newMonitor);
+  return Object.assign({}, state);
+}
 export default reducers;
 
-export const getMonitor = (state: MonitorState, id: number) => ( state.byId[id] );
+export const getMonitor = (state: MonitorsState, id: number) => ( state.monitors[id] );
