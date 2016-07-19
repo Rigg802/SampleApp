@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { Component } from 'react';
 import { MonitorState, MonitorProps } from '../models';
-import { Table, Column, Cell } from 'fixed-data-table';
+import { Table, Column, Cell } from 'fixed-data-table-2';
 import 'fixed-data-table/dist/fixed-data-table.css';
 
-class Monitor extends Component<MonitorProps, MonitorState> {
+class Monitor extends Component<MonitorProps, void> {
   constructor(props:MonitorProps){
     super(props);
   }
@@ -20,7 +20,7 @@ class Monitor extends Component<MonitorProps, MonitorState> {
     const { actions, monitor, monitorData } = this.props;
     const TextCell = (content:any) => {
       const { rowIndex, columnKey, data } = content;
-      return (<Cell {...data}>
+      return (<Cell>
         {data.getObjectAt(rowIndex)[columnKey]}
       </Cell>);
     };
@@ -44,7 +44,7 @@ class Monitor extends Component<MonitorProps, MonitorState> {
         isColumnResizing={false}
         width={1000}
         height={500}
-        {...this.props.monitorData}>
+       >
         <Column
           columnKey="firstName"
           header={<Cell>First Name</Cell>}

@@ -490,3 +490,7 @@ declare namespace FixedDataTable {
 declare module "fixed-data-table" {
     export = FixedDataTable;
 }
+
+declare module "fixed-data-table-2" {
+    export = FixedDataTable;
+}

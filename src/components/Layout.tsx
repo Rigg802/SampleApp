@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { Component } from 'react';
-import { LayoutProps, LayoutState } from '../models';
+import { LayoutProps, LayoutState, LayoutCompState } from '../models';
 import { default as Monitor } from './Monitor';
 import { FakeObjectDataListStore } from '../api/faker';
 
-class Layout extends Component<LayoutProps, LayoutState> {
+class Layout extends Component<LayoutProps, LayoutCompState> {
   constructor(props:LayoutProps){
     super(props);
   }

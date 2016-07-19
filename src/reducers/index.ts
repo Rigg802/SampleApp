@@ -4,10 +4,12 @@ import monitors from './monitorReducer';
 import * as fromLayout from './layoutReducer';
 import * as fromMonitors from './monitorReducer';
 import { RootReducer, LayoutState as Layout } from '../models';
+import { routerReducer  } from 'react-router-redux';
 
 const reducers: ReducersMapObject = { 
     layout: layout,
-    monitors: monitors
+    monitors: monitors,
+    routing: routerReducer
 };
 
 export const rootReducer = combineReducers(reducers);

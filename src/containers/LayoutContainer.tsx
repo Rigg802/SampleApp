@@ -24,9 +24,10 @@ function mapDispatchToProps(dispatch:any) {
   return actionMap;
 }
 
-class LayoutContainer extends Component<LayoutProps, LayoutState> {
+class LayoutContainer extends Component<LayoutProps, void> {
   constructor(props:LayoutProps){
     super(props);
+    console.log("LayoutContainer");
   }
   render() {
     const { monActions, monitors, actions } = this.props;

@@ -4,13 +4,20 @@ export interface MonitorProps {
     monitorData:any
 }
 
-export interface MonitorState {
-    id:number,
-    name:string
-}
-
+//Reducer State
 export interface MonitorsState {
     monitors:Array<MonitorState>
+}
+
+//sub reducer state
+export interface MonitorState {
+    id:number,
+    name:string,
+}
+
+export interface MonitorCompState {
+    isFocused?:boolean,
+    isBackground?:boolean
 }
 
 export interface MonitorAction {

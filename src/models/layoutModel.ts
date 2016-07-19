@@ -6,6 +6,11 @@ export interface LayoutProps {
     monActions?:any
 }
 
+//Reducer State
 export interface LayoutState {
     monitors:Array<number>
+}
+
+export interface LayoutCompState{
+    isActive:boolean;
 }
