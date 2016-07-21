@@ -32,7 +32,7 @@ class Navigator extends Component< NavigatorProps,void > {
       layouts = this.props.layouts;
     }
     return (
-      <div>
+      <div style={defaultStyles}>
         <Link to="/">◀︎ Back</Link>
         <ul>
           {
